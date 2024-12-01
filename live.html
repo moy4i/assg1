@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live - ASIAN KUNG-FU GENERATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/akfg-icon.png">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <a href="index.html">
+            <img src="images/akfg-icon.png" alt="ASIAN KUNG-FU GENERATION Logo" class="sidebar-logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="releases.html">Discography</a></li>
+                <li><a href="live.html">Live</a></li>
+                <li><a href="video.html">Videos</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <p>© 2024 ASIAN KUNG-FU GENERATION | All Rights Reserved</p>
+        </footer>
+    </aside>
+
+    <button class="sidebar-toggle">&#9776;</button> <!-- Hamburger menu icon -->
+
+    <section id="videos-section">
+        <h2>Live Videos</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/fSDjVE0deqA?si=ul_NfLIHpj_0pqHd" 
+                        title="Inamuragasaki Jane from Eizou Sakuhinsyu 20 Kan " 
+                        frameborder="0" 
+                        allowfullscreen></iframe>
+                <p> Inamuragasaki Jane from Eizou Sakuhinsyu 20 Kan</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/w-zG0EdT1WI?si=9CqXJLDQLFlTvSNw"
+                title="Demachiyanagi Parallel Universe from Eizou Sakuhinsyu 19 Kan"
+                frameborder="0" 
+                allowfullscreen></iframe>
+                <p>Demachiyanagi Parallel Universe from Eizou Sakuhinsyu 19 Kan</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/K0FTyx8atbI?si=AnEGIYuldrlMc9cS" title="“Solanin” from “Karma” Blu-ray - 2022.07.23 at. Hibiya Open-Air Concert Hall" frameborder="0" allowfullscreen></iframe>
+                <p>“Solanin” from “Karma” Blu-ray - 2022.07.23 at. Hibiya Open-Air Concert Hall</p>
+            </div><div class="video-item">
+                <iframe src="https://www.youtube.com/embed/gOoybVE6mPo?si=qiwSjnVV3ILHYJ01" title="“You To You” from Eizou Sakuhinsyu 18 Kan Disc2 - 2022.03.12 at Pacifico Yokohama" frameborder="0" allowfullscreen></iframe>
+                <p>“You To You” from Eizou Sakuhinsyu 18 Kan Disc2 - 2022.03.12 at Pacifico Yokohama</p>
+            </div>
+           
+           
+
+        <section id="more">
+            <p>For more live videos and content, <a href="https://www.youtube.com/@akgSMEJ" target="_blank">press here!</a></p>
+        </section>    
+            
+    </section>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+
+        // Add event listener to the toggle button
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active'); // Toggle 'active' class on the sidebar
+        }); 
+        document.addEventListener("DOMContentLoaded", function () {
+            const section = document.querySelector("#introduction");
+            const viewportHeight = window.innerHeight; // Get viewport height
+    
+            // Adjust the section to be positioned below the current viewport height
+            section.style.marginTop = `${viewportHeight}px`;
+        });
+    </script>
+</body>
+</html>

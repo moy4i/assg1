@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Releases - ASIAN KUNG-FU GENERATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/akfg-icon.png">
+</head>
+
+<body>
+
+    
+    <aside class="sidebar">
+        <a href="index.html">
+            <img src="images/akfg-icon.png" alt="ASIAN KUNG-FU GENERATION Logo" class="sidebar-logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="releases.html">Discography</a></li>
+                <li><a href="live.html">Live</a></li>
+                <li><a href="video.html">Videos</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <p>© 2024 ASIAN KUNG-FU GENERATION | All Rights Reserved</p>
+        </footer>
+    </aside>
+
+    <button class="sidebar-toggle">&#9776;</button> <!-- Hamburger menu icon -->
+    
+    <section id="albums-section" class="fade-in">
+        <h2>Albums</h2>
+        <div class="albums-grid">
+            <!-- Example album -->
+            <div class="album-item">
+                <img src="images/singlecollect.jpg" alt="singlecollect">
+                <p>Single Collection</p>
+            </div>
+            <div class="album-item">
+                <img src="images/surfbungaku.jpg" alt="surfbungaku">
+                <p>Surf Bungaku Kamakura - Complete</p>
+            </div>
+            <div class="album-item">
+                <img src="images/planetfolks.jpg" alt="planetfolks">
+                <p>Planet Folks</p>
+            </div>
+            <div class="album-item">
+                <img src="images/hometown.jpg" alt="hometown">
+                <p>Hometown</p>
+            </div>
+            <div class="album-item">
+                <img src="images/besthit2.jpg" alt="besthit2">
+                <p>BEST HIT AKG 2</p>
+            </div>
+            <div class="album-item">
+                <img src="images/solfa2016.jpg" alt="solfa2016">
+                <p>Sol-Fa 2016</p>
+            </div>
+            <div class="album-item">
+                <img src="images/wonderfuture.jpg" alt="wonderfuture">
+                <p>Wonder Future</p>
+            </div>
+            <div class="album-item">
+                <img src="images/feedback2.jpg" alt="feedback2">
+                <p>AFeedback File 2</p>
+            </div>
+            <div class="album-item">
+                <img src="images/landmark.jpg" alt="landmark">
+                <p>Landmark</p>
+            </div>
+            <div class="album-item">
+                <img src="images/besthit.jpg" alt="besthit">
+                <p>BEST HIT AKG</p>
+            </div>
+            <div class="album-item">
+                <img src="images/magicdisk.jpg" alt="magicdisk">
+                <p>Magic Disk</p>
+            </div>
+            <div class="album-item">
+                <img src="images/surfbungakuog.jpg" alt="surfbungakuog">
+                <p>Surf Bungaku Kamakura</p>
+            </div>
+            <div class="album-item">
+                <img src="images/world3.jpg" alt="world3">
+                <p>World World World</p>
+            </div>
+            <div class="album-item">
+                <img src="images/fanclub.jpg" alt="fanclub">
+                <p>Fanclub</p>
+            </div>
+
+            <div class="album-item">
+                <img src="images/feedback.jpg" alt="feedback">
+                <p>Feedback File</p>
+            </div>
+
+            <div class="album-item">
+                <img src="images/solfa.jpg" alt="solfa">
+                <p>Sol-fa</p>
+            </div>
+
+            <div class="album-item">
+                <img src="images/Kimi_Tsunagi_Five_M_cover.png" alt="Kimi_Tsunagi_Five_M_cover">
+                <p>Kimi Tsunagi Five M</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+
+        // Add event listener to the toggle button
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active'); // Toggle 'active' class on the sidebar
+        }); 
+        document.addEventListener("DOMContentLoaded", function () {
+            const section = document.querySelector("#introduction");
+            const viewportHeight = window.innerHeight; // Get viewport height
+    
+            // Adjust the section to be positioned below the current viewport height
+            section.style.marginTop = `${viewportHeight}px`;
+        });
+    </script>
+</body>
+
+</html>

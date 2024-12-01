@@ -8,113 +8,238 @@ body {
     line-height: 1.6; /* Improve readability */
 }
 
-header {
-    background-color: #000000;
-    color: white;
+.snsList {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 13px;
+    z-index: 200;
+}
+
+.snsList a img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.snsList a img:hover {
+    transform: scale(1.1);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar always visible on larger screens */
+.sidebar.desktop {
+    transform: translateX(0); /* Always visible */
+}
+
+.sidebar.mobile {
+    transform: translateX(-250px); /* Initially hidden */
+}
+
+.sidebar.mobile.active {
+    transform: translateX(0); /* Slide in when active */
+}
+
+.sidebar footer {
+    width: 100%;
+    background-color: #f3f3f3;
     text-align: center;
-    margin: 0;
-    padding: 0.5rem 0; /* Slightly more padding for visual balance */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Header shadow for depth */
-    overflow-x: hidden;
+    padding: 1.5rem 0;
+    font-size: 0.8rem;
+    margin-top: auto;
 }
 
-header h1 a {
-    color: white; /* Match the header text color */
-    text-decoration: none; /* Remove underline */
-    font-size: inherit; /* Keep the font size of the h1 */
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+.sidebar-logo {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 1rem;
 }
 
-header h1 a:hover {
-    color: #ffcc00; /* Change the color on hover */
-    text-shadow: 0 2px 4px rgba(255, 204, 0, 0.5); /* Add a glow effect */
-}
-
-nav {
-    display: flex;
-    justify-content: space-between; /* Align navbar items and search bar */
-    align-items: center; /* Center vertically */
-    padding: 0.75rem 2rem;
-    background-color: #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-
-.navbar {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    
-    margin: 0;
-    text-align:justify;
-}
-
-.navbar a {
-    color: white;
+.sidebar h1 a {
+    color: #ffcc00;
     text-decoration: none;
-    font-weight: 600; /* Slightly thicker font for emphasis */
-    padding: 0.75rem 1rem;
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.navbar a:hover {
-    background-color: #575757;
-    color: #ffcc00; /* Highlight color on hover */
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
+.sidebar nav ul li {
+    margin: 1rem 0;
+}
 
+.sidebar nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    background-color: transparent;
+    color: rgb(209, 209, 209);
+    border: none;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+/* Make the toggle button visible on small screens */
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-250px); /* Hide sidebar by default */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Show sidebar when active */
+    }
+
+    section {
+        margin-left: 0; /* Adjust for no sidebar */
+    }
+
+    #videos-section,
+    #albums-section {
+        margin-left: 0;
+    }
+
+    .video-item iframe {
+        width: 100%; /* Make videos take full width on mobile */
+        height: 200px; /* Adjust height to keep videos smaller */
+    }
+}
+
+/* Sidebar always visible on desktop screens */
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: none; /* Hide the toggle button */
+    }
+
+    .video-item iframe {
+        width: 100%; /* Make videos take full width on desktop */
+        height: 400px; /* Larger height for desktop view */
+    }
+}
+
+/* Section Styles */
 section {
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
-    margin: 0 auto;
-    max-width: 1200px;
-    text-align: center; /* Center-align section content */
+    text-align: center;
+    position: relative;
 }
 
 h2 {
     color: #8b2424;
-    font-weight: 700; /* Bold headings */
-    margin-bottom: 1rem; /* Add spacing below headings */
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-/* Gallery Styles */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.gallery img {
-    width: auto;
-    height: 350px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation */
-}
-
-.gallery img:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-/* Footer Styles */
-footer {
-    background-color: #000000;
-    color: white;
+#contact-section, #videos-section, #albums-section {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 1rem 0;
-    position: relative; /* Use relative if it's within the document flow */
-    z-index: 5; /* Keep it above background elements */
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    margin-left: 250px;
 }
 
-footer p {
-    margin: 0;
+#videos-section {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#albums-section {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.album-item {
+    text-align: center;
+}
+
+.album-item img {
+    width: 67%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.album-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInEffect 0.5s forwards;
+}
+
+@keyframes fadeInEffect {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Additional Media Queries */
+@media (max-width: 768px) {
+    #contact-section, #videos-section, #albums-section {
+        padding: 1rem;
+        margin-left: 0;
+    }
+
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
 }

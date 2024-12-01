@@ -3,60 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASIAN KUNG-FU GENERATION - Profile</title>
+    <title>Profile - ASIAN KUNG-FU GENERATION</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="icon" type="image/png" href="images/akfg-icon.png">
 </head>
+
 <body>
-    <header>
-        <h1><a href="index.html">ASIAN KUNG-FU GENERATION</a></h1>
+    <aside class="sidebar">
+        <a href="index.html">
+            <img src="images/akfg-icon.png" alt="ASIAN KUNG-FU GENERATION Logo" class="sidebar-logo">
+        </a>
         <nav>
-            <ul class="navbar">
+            <ul>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#shows">Upcoming Shows</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="releases.html">Discography</a></li>
+                <li><a href="live.html">Live</a></li>
+                <li><a href="video.html">Videos</a></li>
             </ul>
         </nav>
-    </header>
+        <footer>
+            <p>© 2024 ASIAN KUNG-FU GENERATION | All Rights Reserved</p>
+        </footer>
+    </aside>
 
-    <section id="profile">
-        <h2>Profile</h2>
-        <div class="profile-container">
-            <!-- Profile Image -->
-            <div class="profile-image">
-                <img src="https://tokytunes.com/wp-content/uploads/2024/06/1718887794_ASIAN-KUNG-FU-GENERATIONs-new-song-Life-is-Beautiful-has-been-1024x682.jpg" 
-                     alt="ASIAN KUNG-FU GENERATION">
-            </div>
-            <!-- Member Details -->
-            <div class="profile-details">
-                <div class="member">
-                    <h3>Vocal & Guitar</h3>
-                    <p>Masafumi Gotoh (後藤正文)</p>
-                    <p>Born April 12, 1976, Aries, Blood Type O</p>
-                </div>
-                <div class="member">
-                    <h3>Guitar</h3>
-                    <p>Kensuke Kita (喜多建介)</p>
-                    <p>Born January 24, 1977, Aquarius, Blood Type A</p>
-                </div>
-                <div class="member">
-                    <h3>Bass</h3>
-                    <p>Takahiro Yamada (山田貴洋)</p>
-                    <p>Born August 19, 1977, Leo, Blood Type A</p>
-                </div>
-                <div class="member">
-                    <h3>Drum</h3>
-                    <p>Kiyoshi Ijichi (伊地知潔)</p>
-                    <p>Born September 25, 1977, Libra, Blood Type AB</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+    <button class="sidebar-toggle">&#9776;</button> <!-- Hamburger menu icon -->
 
-    <footer>
-        <p>© 2024 ASIAN KUNG-FU GENERATION | All Rights Reserved</p>
-    </footer>
+    <main>
+        <header>
+            <h1>ASIAN KUNG-FU GENERATION</h1>
+        </header>
+        
+        <section id="backstory">
+            <p>
+                Formed in 1996 in a university music circle. With Gotoh, Kita, and Yamada being the first ones to create their first-ever band, ASIAN KUNG-FU GENERATION. Ijichi, who was active as a drummer in the same circle, joined.  
+                Live performances were performed mainly on campus and in their hometown, Yokohama, with original songs written entirely in English.
+            </p>
+        </section>
+        
+        <section id="profile">
+            <h1 class="title" data-wovn-ignore="true">PROFILE</h1>
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="https://www.sonymusic.co.jp/Music/Info/AKG/eng/images/pc-photo.jpg" 
+                         alt="ASIAN KUNG-FU GENERATION band pic">
+                </div>
+                <div class="profile-details">
+                    <div class="member">
+                        <h3>Vocal & Guitar</h3>
+                        <h4>Masafumi Gotoh</h4>
+                        <h5>後藤正文</h5>
+                        <p>Born April 12, 1976, Aries, Blood Type O</p>
+                        <p>Shizuoka prefecture (Chuubu area)</p>
+                    </div>
+                    <div class="member">
+                        <h3>Guitar</h3>
+                        <h4>Kensuke Kita</h4>
+                        <h5>喜多建介</h5>
+                        <p>Born January 24, 1977, Aquarius, Blood Type A</p>
+                        <p>Kanagawa prefecture (Kantou area)</p>
+                    </div>
+                    <div class="member">
+                        <h3>Bass</h3>
+                        <h4>Takahiro Yamada</h4>
+                        <h5>山田貴洋</h5>
+                        <p>Born August 19, 1977, Leo, Blood Type A</p>
+                        <p>Shizuoka prefecture (Chuubu area)</p>
+                    </div>
+                    <div class="member">
+                        <h3>Drum</h3>
+                        <h4>Kiyoshi Ijichi</h4>
+                        <h5>伊地知潔</h5>
+                        <p>Born September 25, 1977, Libra, Blood Type AB</p>
+                        <p>Kanagawa prefecture (Kantou area)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const toggleButton = document.querySelector('.sidebar-toggle');
+        const profileContainer = document.querySelector('.profile-container');
+        const profileImage = document.querySelector('.profile-image img');
+        const profileDetails = document.querySelector('.profile-details');
+
+        // Toggle the sidebar on mobile
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Adjust profile layout for mobile
+        function adjustLayoutForMobile() {
+            if (window.innerWidth <= 768) {
+                // Stack the profile image and details vertically on smaller screens
+                profileContainer.style.flexDirection = 'column';
+                profileImage.style.width = '100%'; // Ensure image is responsive
+                profileDetails.style.marginTop = '1rem'; // Space between image and details
+            } else {
+                // Reset styles for larger screens
+                profileContainer.style.flexDirection = 'row';
+                profileImage.style.width = '150%'; // Image size for larger screens
+                profileDetails.style.marginTop = '0';
+            }
+        }
+
+        // Call the layout adjustment function on page load and resize
+        window.addEventListener('load', adjustLayoutForMobile);
+        window.addEventListener('resize', adjustLayoutForMobile);
+    </script>
 </body>
 </html>

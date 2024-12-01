@@ -233,11 +233,15 @@ h2 {
 }
 
 
-@media (max-width: 768px) {
-    #contact-section, #videos-section, #albums-section {
-        padding: 1rem;
-        margin-left: 0;
+@media (min-width: 769px) {
+    #contact-section, #videos-section, #albums-section, #introduction, #shows {
+        margin-left: 250px; /* Sidebar width */
     }
+
+    section {
+        margin-left: 250px; /* Adjust for the sidebar */
+    }
+
 
     .albums-grid {
         grid-template-columns: 1fr;

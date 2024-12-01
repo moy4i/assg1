@@ -1,14 +1,14 @@
-/* General Reset */
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'IBM Plex Sans', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    display: flex; /* For aligning sidebar and content */
+    display: flex; 
 }
 
-/* Target the band name (header h1) */
+
 header h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2.4rem;
@@ -35,22 +35,22 @@ section h1 a {
 #backstory {
     display: flex;
     justify-content: center;
-    align-items: center; /* Optional: for vertical centering */
+    align-items: center; 
     padding: 0.2rem;
-    background-position: center; /* Center the background */
-    background-size: cover; /* Make sure the background covers the entire section */
-    background-color: #ffffff; /* Light background for contrast */
-    text-align: center; /* Center-align the text */
+    background-position: center; 
+    background-size: cover; 
+    background-color: #ffffff; 
+    text-align: center; 
     width: 50%;
-    margin: auto; /* Center section horizontally on the page */
+    margin: auto; 
     border-radius: 2%;
 }
 
 #backstory p {
-    font-size: 1rem; /* Slightly smaller font for backstory */
-    font-weight: 400; /* Normal weight */
-    line-height: 1.8; /* Increase line height for readability */
-    color: #000000; /* Neutral text color */
+    font-size: 1rem; 
+    font-weight: 400; 
+    line-height: 1.8; 
+    color: #000000; 
 }
 
 .sidebar {
@@ -70,17 +70,17 @@ section h1 a {
     transition: transform 0.3s ease;
 }
 
-/* Sidebar always visible on larger screens */
+
 .sidebar.desktop {
-    transform: translateX(0); /* Always visible */
+    transform: translateX(0); 
 }
 
 .sidebar.mobile {
-    transform: translateX(-250px); /* Initially hidden */
+    transform: translateX(-250px); 
 }
 
 .sidebar.mobile.active {
-    transform: translateX(0); /* Slide in when active */
+    transform: translateX(0); 
 }
 
 .sidebar footer {
@@ -145,31 +145,31 @@ section h1 a {
     z-index: 2000;
 }
 
-/* Make the toggle button visible on small screens */
+
 @media (max-width: 768px) {
     .sidebar-toggle {
         display: block;
     }
 
     .sidebar {
-        transform: translateX(-250px); /* Hide sidebar by default */
+        transform: translateX(-250px);
     }
 
     .sidebar.active {
-        transform: translateX(0); /* Show sidebar when active */
+        transform: translateX(0);
     }
 
     section {
-        margin-left: 0; /* Adjust for no sidebar */
+        margin-left: 0; 
     }
 
     main {
-        margin-left: 0; /* No margin when sidebar is hidden */
-        padding: 2rem 1rem; /* Adjust padding for mobile */
+        margin-left: 0; 
+        padding: 2rem 1rem; 
     }
 
     #contact-section, #videos-section, #albums-section {
-        margin-left: 0; /* Remove margin-left for better centering on mobile */
+        margin-left: 0;
     }
 }
 
@@ -179,25 +179,24 @@ section h1 a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-left: 250px;
-    width: 100%; /* Ensure these sections take the full width */
+    width: 100%; 
 }
 
-/* Sidebar always visible on desktop screens */
+
 @media (min-width: 769px) {
     .sidebar {
         transform: translateX(0);
     }
 
     .sidebar-toggle {
-        display: none; /* Hide the toggle button */
+        display: none; 
     }
 }
 
-/* Main Content */
 main {
-    margin-left: 250px; /* Push the content to the right of the sidebar */
+    margin-left: 250px; 
     padding: 2rem;
-    width: calc(100% - 250px); /* Prevent overflow */
+    width: calc(100% - 250px); 
 }
 
 header {
@@ -212,7 +211,7 @@ header {
     flex-wrap: wrap;
 }
 
-/* Profile Image */
+
 .profile-image {
     flex: 1;
     max-width: 100%;
@@ -225,7 +224,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Profile Details */
+
 .profile-details {
     flex: 2;
     display: flex;
@@ -274,15 +273,15 @@ header {
     width: 150%;
     height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    opacity: 0; /* Start fully transparent */
-    transform: translateY(10px); /* Start slightly below its final position */
-    animation: fadeIn 0.5s ease-out forwards; /* Trigger the fade-in animation */
+    opacity: 0; 
+    transform: translateY(10px); 
+    animation: fadeIn 0.5s ease-out forwards; 
 }
 
-/* Fade-in Keyframes */
+
 @keyframes fadeIn {
     to {
-        opacity: 1; /* Fully visible */
-        transform: translateY(0); /* Return to its original position */
+        opacity: 1; 
+        transform: translateY(0); 
     }
 }

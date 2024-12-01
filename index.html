@@ -9,18 +9,18 @@
     <link rel="icon" type="image/png" href="images/akfg-icon.png">
 
     <style class="bg">
-        /* Default background for larger screens */
+
         body {
-            background-image: url('images/liveband.jpg'); /* Desktop background */
+            background-image: url('images/liveband.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
     
-        /* Mobile background */
+
         @media (max-width: 767px) {
             body {
-                background-image: url('images/livebandmobile.png'); /* Mobile background */
+                background-image: url('images/livebandmobile.png'); 
             }
         }
     </style>
@@ -54,7 +54,7 @@
     </aside>  
 
 
-    <button class="sidebar-toggle">&#9776;</button> <!-- Hamburger menu icon -->
+    <button class="sidebar-toggle">&#9776;</button> 
 
     <section id="introduction">
         <h2>Introduction</h2>
@@ -77,19 +77,14 @@
     </section>
 
     <script>
-        const sidebar = document.querySelector('.sidebar');
-        const sidebarToggle = document.querySelector('.sidebar-toggle');
-
-        // Add event listener to the toggle button
-        sidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('active'); // Toggle 'active' class on the sidebar
-        }); 
-        document.addEventListener("DOMContentLoaded", function () {
-            const section = document.querySelector("#introduction");
-            const viewportHeight = window.innerHeight; // Get viewport height
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sidebar toggle functionality
+            document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+                document.querySelector('.sidebar').classList.toggle('active');
+            });
     
-            // Adjust the section to be positioned below the current viewport height
-            section.style.marginTop = `${viewportHeight}px`;
+            // Adjust section margin
+            document.querySelector("#introduction").style.marginTop = `${window.innerHeight}px`;
         });
     </script>
 </body>

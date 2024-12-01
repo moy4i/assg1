@@ -1,11 +1,11 @@
-/* General Styles */
+
 body {
-    font-family: "IBM Plex Sans", Arial, sans-serif; /* IBM Plex Sans as primary font */
+    font-family: "IBM Plex Sans", Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
     color: #333;
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.6; 
 }
 
 .snsList {
@@ -44,17 +44,17 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Sidebar always visible on larger screens */
+
 .sidebar.desktop {
-    transform: translateX(0); /* Always visible */
+    transform: translateX(0);
 }
 
 .sidebar.mobile {
-    transform: translateX(-250px); /* Initially hidden */
+    transform: translateX(-250px);
 }
 
 .sidebar.mobile.active {
-    transform: translateX(0); /* Slide in when active */
+    transform: translateX(0); 
 }
 
 .sidebar footer {
@@ -119,22 +119,22 @@ body {
     z-index: 2000;
 }
 
-/* Make the toggle button visible on small screens */
+
 @media (max-width: 768px) {
     .sidebar-toggle {
         display: block;
     }
 
     .sidebar {
-        transform: translateX(-250px); /* Hide sidebar by default */
+        transform: translateX(-250px); 
     }
 
     .sidebar.active {
-        transform: translateX(0); /* Show sidebar when active */
+        transform: translateX(0); 
     }
 
     section {
-        margin-left: 0; /* Adjust for no sidebar */
+        margin-left: 0; 
     }
 
     #videos-section,
@@ -143,28 +143,28 @@ body {
     }
 
     .video-item iframe {
-        width: 100%; /* Make videos take full width on mobile */
-        height: 200px; /* Adjust height to keep videos smaller */
+        width: 100%; 
+        height: 200px; 
     }
 }
 
-/* Sidebar always visible on desktop screens */
+
 @media (min-width: 769px) {
     .sidebar {
         transform: translateX(0);
     }
 
     .sidebar-toggle {
-        display: none; /* Hide the toggle button */
+        display: none; 
     }
 
     .video-item iframe {
-        width: 100%; /* Make videos take full width on desktop */
-        height: 400px; /* Larger height for desktop view */
+        width: 100%; 
+        height: 400px; 
     }
 }
 
-/* Section Styles */
+
 section {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
@@ -232,7 +232,7 @@ h2 {
     }
 }
 
-/* Additional Media Queries */
+
 @media (max-width: 768px) {
     #contact-section, #videos-section, #albums-section {
         padding: 1rem;

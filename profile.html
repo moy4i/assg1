@@ -83,35 +83,15 @@
     </main>
 
     <script>
-        const sidebar = document.querySelector('.sidebar');
-        const toggleButton = document.querySelector('.sidebar-toggle');
-        const profileContainer = document.querySelector('.profile-container');
-        const profileImage = document.querySelector('.profile-image img');
-        const profileDetails = document.querySelector('.profile-details');
-
-        // Toggle the sidebar on mobile
-        toggleButton.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sidebar toggle functionality
+            document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+                document.querySelector('.sidebar').classList.toggle('active');
+            });
+    
+            // Adjust section margin
+            document.querySelector("#introduction").style.marginTop = `${window.innerHeight}px`;
         });
-
-        // Adjust profile layout for mobile
-        function adjustLayoutForMobile() {
-            if (window.innerWidth <= 768) {
-                // Stack the profile image and details vertically on smaller screens
-                profileContainer.style.flexDirection = 'column';
-                profileImage.style.width = '100%'; // Ensure image is responsive
-                profileDetails.style.marginTop = '1rem'; // Space between image and details
-            } else {
-                // Reset styles for larger screens
-                profileContainer.style.flexDirection = 'row';
-                profileImage.style.width = '150%'; // Image size for larger screens
-                profileDetails.style.marginTop = '0';
-            }
-        }
-
-        // Call the layout adjustment function on page load and resize
-        window.addEventListener('load', adjustLayoutForMobile);
-        window.addEventListener('resize', adjustLayoutForMobile);
     </script>
 </body>
 </html>

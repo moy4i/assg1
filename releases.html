@@ -29,12 +29,12 @@
         </footer>
     </aside>
 
-    <button class="sidebar-toggle">&#9776;</button> <!-- Hamburger menu icon -->
+    <button class="sidebar-toggle">&#9776;</button>
     
     <section id="albums-section" class="fade-in">
         <h2>Albums</h2>
         <div class="albums-grid">
-            <!-- Example album -->
+
             <div class="album-item">
                 <img src="images/singlecollect.jpg" alt="singlecollect">
                 <p>Single Collection</p>
@@ -110,24 +110,14 @@
     </section>
 
     <script>
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active');
-        }
-
-        const sidebar = document.querySelector('.sidebar');
-        const sidebarToggle = document.querySelector('.sidebar-toggle');
-
-        // Add event listener to the toggle button
-        sidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('active'); // Toggle 'active' class on the sidebar
-        }); 
-        document.addEventListener("DOMContentLoaded", function () {
-            const section = document.querySelector("#introduction");
-            const viewportHeight = window.innerHeight; // Get viewport height
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sidebar toggle functionality
+            document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+                document.querySelector('.sidebar').classList.toggle('active');
+            });
     
-            // Adjust the section to be positioned below the current viewport height
-            section.style.marginTop = `${viewportHeight}px`;
+            // Adjust section margin
+            document.querySelector("#introduction").style.marginTop = `${window.innerHeight}px`;
         });
     </script>
 </body>
